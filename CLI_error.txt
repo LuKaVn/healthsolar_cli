@@ -1,0 +1,6 @@
+100 Continue
+101 Switching Protocols
+102 Processing (WebDAV; RFC 2518)
+103 Early Hints (RFC 8297)
+200 OK
+444 No Response
