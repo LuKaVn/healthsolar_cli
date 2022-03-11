@@ -101,6 +101,7 @@ def read_weather():
     
 def main():
     # 2 condition to read data is: time from 9h30 to 14h30 AND   radiation no less than  500W
+    # time.struct_time(tm_year=2022, tm_mon=3, tm_mday=10, tm_hour=11, tm_min=32, tm_sec=32, tm_wday=3, tm_yday=69, tm_isdst=0)
     _HOUR=time.localtime().tm_hour
     _CONDITION=(_HOUR>9 and _HOUR<15 and read_wearther())
     if _CONDITION==True:
@@ -108,29 +109,22 @@ def main():
         read_data()
     else:
         print("time end")
-
-'''       
-def test_do():
-    for i in range(10):
-        _time=time.localtime().tm_min
-        #time.struct_time(tm_year=2022, tm_mon=3, tm_mday=9, tm_hour=15, tm_min=15, tm_sec=40, tm_wday=2, tm_yday=68, tm_isdst=0)
-        condition_time= _time>12 and _time<14
-        while(condition_time==False):
-            
-            _time=time.localtime().tm_min
-            condition_time= _time>12 and _time<14
-            
-        if(condition_time==True):
-            print(i)
-            _time=time.localtime().tm_min
-            print(time.localtime().tm_sec)
-            time.sleep(5)
-        else:
-            {}
-        print(i)
-'''
-
+def export_data(data_input):# data input is list
+    f_define=str(time.localtime().tm_year) + "_" +str(time.localtime().tm_mon) + "_" + str(time.localtime().tm_mday)+ "_" +"export_data"+ ".txt" 
+    print(f_define)
+    f = open(f_define,"a")
+    
+    if range(len(data_input)>0):
+        #f=open(f_define,"a")
+        f.write("time_export_"+ str(time.localtime().tm_hour)+"_"+str(time.localtime().tm_min)+"_"+str(time.localtime().tm_sec))
+        f.write('\n\r')
+        for y in range(len(data_input)):
+            f.write(data_input[y]+ "   ")
+        f.write('\n\r')
+        f.close()
+'''      
+    
 while(1):
     main()
-    
-
+'''
+export_data(KEYIVT)  
