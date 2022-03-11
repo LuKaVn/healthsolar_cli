@@ -48,7 +48,7 @@ def read_data():
         _CONDITON_WEATHER=read_weather()
         while(_CONDITON_WEATHER==False): # đo dữ liệu thời tiết
             _CONDITON_WEATHER=read_weather() 
-# mục đích code đoạn trên là để giữu không cho địa chỉ IP Inverter nó bị nhảy
+# mục đích code đoạn trên là để giữ không cho địa chỉ IP Inverter nó bị nhảy
         if(_CONDITON_WEATHER==True): # có thể không cần sử dụng IF trong trường hợp này
             time.sleep(1)
             for y in range(_CYCLE):# số lần đọc lặp lại
@@ -122,9 +122,15 @@ def export_data(data_input):# data input is list
             f.write(data_input[y]+ "   ")
         f.write('\n\r')
         f.close()
+        
+# chưa thực hiện thông báo
+# chưa thực hiện xuất dữ liệu trên CLI
+# chưa thực hiện try catch khi không kết nối IVT
+# chưa thực hiện báo lỗi mất kết nối và các lỗi khác
+# chưa hẹn giờ chạy code 
 '''      
     
 while(1):
     main()
 '''
-export_data(KEYIVT)  
+
