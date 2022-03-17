@@ -128,6 +128,7 @@ def export_data(data_input):# data input is list
 # chưa thực hiện try catch khi không kết nối IVT
 # chưa thực hiện báo lỗi mất kết nối và các lỗi khác
 # chưa hẹn giờ chạy code 
+# tiep tuc thuc hien
 '''      
     
 while(1):
